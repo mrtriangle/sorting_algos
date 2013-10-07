@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>bubble sort</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="michael peltzer">
+	<!-- Date: 2013-06-21 -->
+	<script type="text/javascript" src="../d3/d3.v3.js"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+	
+		<script type="text/javascript">
+			var swaps = 0
+		
+			for (var a=[],i=0;i<10;++i) a[i]=i;
+			function shuffle(array) {
+			  var tmp, current, top = array.length;
+			  if(top) while(--top) {
+			    current = Math.floor(Math.random() * (top + 1));
+			    tmp = array[current];
+			    array[current] = array[top];
+			    array[top] = tmp;
+			  }
+			  return array;
+			}
+
+			list = shuffle(a);
+			
+			function bubbleSort(list){
+				var compare;
+				do {	
+				 compare = false;
+				 for (var n = 0; n < list.length-1; n++){
+					if(list[n] > list[n + 1]){
+						console.log('comparing ' + list[n] + ' to ' + list[n+1])
+						var swap = list[n];
+						list[n] = list[n+1];
+						list[n+1] = swap;
+						compare = true;
+						swaps++
+						}
+					  console.log(list);
+				    }
+				}
+			  while (compare);
+			}
+		bubbleSort(list);
+		console.log(swaps);	
+	   </script>
+	</body>
+</html>

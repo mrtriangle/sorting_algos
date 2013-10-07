@@ -32,6 +32,12 @@
 
 			list = shuffle(a);
 			
+			function swap(n,x){
+				var temp = list[n];
+				list[n] = list[x];
+				list[x] = temp;
+			}
+			
 			function bubbleSort(list){
 				var compare;
 				do {	
@@ -39,9 +45,7 @@
 				 for (var n = 0; n < list.length-1; n++){
 					if(list[n] > list[n + 1]){
 						console.log('comparing ' + list[n] + ' to ' + list[n+1])
-						var swap = list[n];
-						list[n] = list[n+1];
-						list[n+1] = swap;
+						swap(n, n + 1);
 						compare = true;
 						swaps++
 						}
